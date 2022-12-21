@@ -1,0 +1,42 @@
+# cluster-total.yaml
+
+apiVersion: kueue.x-k8s.io/v1alpha2
+kind: ClusterQueue
+metadata:
+  name: cluster-total
+spec:
+  namespaceSelector: {} # match all.
+  resources:
+  - name: "cpu"
+    flavors:
+    - name: default
+      quota:
+        min: 9
+  - name: "memory"
+    flavors:
+    - name: default
+      quota: 
+        min: 36Gi
+
+# t1-q” and “t2-q
+
+
+
+# default-user-queue.yaml
+apiVersion: kueue.x-k8s.io/v1alpha2
+kind: LocalQueue
+metadata:
+  namespace: project1
+  name: t1-q
+spec:
+  clusterQueue: cluster-total
+
+  kubectl apply -f default-user-queue.yaml
+
+  Create a second ClusterQueue (“k-b”) that defines separate usage 
+  limits forARM and x86 CPU architectures and default memory resources.
+
+Reconfigure ClusterQueue “k-a” and “k-b” in a way that would allow them to borrow unused resource quota from each other,
+and set a limit for the amount of unused quota that “k-a” is allowed to borrow.
+
+

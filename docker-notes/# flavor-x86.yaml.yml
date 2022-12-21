@@ -1,0 +1,8 @@
+# flavor-x86.yaml
+
+apiVersion: kueue.x-k8s.io/v1alpha2
+kind: ResourceFlavor
+metadata:
+  name: x86
+nodeSelector:
+  cpu-arch: x86

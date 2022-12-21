@@ -1,0 +1,7 @@
+# flavor-arm.yaml
+apiVersion: kueue.x-k8s.io/v1alpha2
+kind: ResourceFlavor
+metadata:
+  name: arm
+nodeSelector:
+  cpu-arch: arm

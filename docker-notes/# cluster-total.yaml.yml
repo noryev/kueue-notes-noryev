@@ -1,0 +1,21 @@
+# cluster-total.yaml
+apiVersion: kueue.x-k8s.io/v1alpha2
+kind: ClusterQueue
+metadata:
+  name: cluster-total
+spec:
+  namespaceSelector: {}
+  resources:
+  - name: "cpu"
+    flavors: flavor-arm.yaml
+    - name: x86
+      quota:
+        min: 9
+    - name: arm
+      quota:
+        min: 12
+  - name: "memory"
+    flavors: flavor-x86.yaml
+    - name: default
+      quota:
+        min: 84Gi
