@@ -36,7 +36,7 @@ spec:
   Create a second ClusterQueue (“k-b”) that defines separate usage 
   limits forARM and x86 CPU architectures and default memory resources.
 
-Reconfigure ClusterQueue “k-a” and “k-b” in a way that would allow them to borrow unused resource quota from each other,
-and set a limit for the amount of unused quota that “k-a” is allowed to borrow.
+# Reconfigure ClusterQueue “k-a” and “k-b” in a way that would allow them to borrow unused resource quota from each other,
+# and set a limit for the amount of unused quota that “k-a” is allowed to borrow.
 
-
+# Signed the Linux Foundations Open Source CLA for this (repository)[https://github.com/kubernetes-sigs/kueue/pull/484]
