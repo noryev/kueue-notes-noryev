@@ -40,3 +40,5 @@ spec:
 # and set a limit for the amount of unused quota that “k-a” is allowed to borrow.
 
 # Signed the Linux Foundations Open Source CLA for this (repository)[https://github.com/kubernetes-sigs/kueue/pull/484]
+
+# tried configuration using readme, seemed to need to be reset and created new cluster based on new yaml/configuration
